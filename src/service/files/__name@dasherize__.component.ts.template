@@ -1,0 +1,35 @@
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class <%= classify(name)%>Service implements OnInit {
+
+  //#region ATTRIBUTS
+  /* ==========================================================================
+                                ATTRIBUTS
+  ===========================================================================*/
+
+  //#endregion
+
+  //#region METHODES
+  /* ==========================================================================
+                                METHODES
+  ===========================================================================*/
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void { }
+
+  //#region ---------------------- GETTERS / SETTERS --------------------------
+  //#endregion
+
+  //#region ------------------------- HTTP REQUESTS ---------------------------
+  //#endregion
+
+  //#region ----------------------- OTHER METHOODES ---------------------------
+  //#endregion
+
+  //#endregion
+}

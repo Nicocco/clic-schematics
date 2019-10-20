@@ -5,6 +5,11 @@
       "description": "clic component",
       "factory": "./component/index#component",
       "schema": "./component/schema.json"
+    },
+    "service": {
+      "description": "clic service",
+      "factory": "./service/index#service",
+      "schema": "./service/schema.json"
     }
   }
 }
