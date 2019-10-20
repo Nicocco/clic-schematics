@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+<% if (http) {%>import { HttpClient } from '@angular/common/http';<% } %>
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,9 @@ export class <%= classify(name)%>Service implements OnInit {
   /* ==========================================================================
                                 ATTRIBUTS
   ===========================================================================*/
+  <% if (http) { %>
+  private _controllerRoute: string = '/controllerName';
+  <%}%>
 
   //#endregion
 
@@ -18,16 +21,17 @@ export class <%= classify(name)%>Service implements OnInit {
                                 METHODES
   ===========================================================================*/
 
-  constructor(private http: HttpClient) { }
+  constructor(<% if (http) { %>private http: HttpClient <% } %>) { }
 
   ngOnInit(): void { }
 
   //#region ---------------------- GETTERS / SETTERS --------------------------
   //#endregion
 
+<% if (http) { %>
   //#region ------------------------- HTTP REQUESTS ---------------------------
   //#endregion
-
+<% } %>
   //#region ----------------------- OTHER METHOODES ---------------------------
   //#endregion
 

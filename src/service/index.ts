@@ -1,10 +1,11 @@
 import { Rule, SchematicContext, Tree, apply, url, applyTemplates, move, chain, mergeWith, SchematicsException } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
+import { schema } from './schema';
 
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function service(options: any): Rule {
+export function service(options: schema): Rule {
   return (tree: Tree, _context: SchematicContext) => {
 
     const workspaceConfig = tree.read('/angular.json');
@@ -16,7 +17,8 @@ export function service(options: any): Rule {
       applyTemplates({
         classify: strings.classify,
         dasherize: strings.dasherize,
-        name: options.name
+        name: options.name,
+        http: options.http
       }),
       move(normalize(options.path as string))
     ]);
