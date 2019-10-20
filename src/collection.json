@@ -1,9 +1,10 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "clic-schematics": {
-      "description": "A blank schematic.",
-      "factory": "./clic-schematics/index#clicSchematics"
+    "component": {
+      "description": "clic component",
+      "factory": "./component/index#component",
+      "schema": "./component/schema.json"
     }
   }
 }

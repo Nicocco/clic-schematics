@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicComponent",
+    "title": "Component Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The name of the component",
+        "type": "string"
+      },
+      "path": {
+        "description": "The path were to create component",
+        "type": "string"
+      }
+    },
+    "required": [
+        "name"
+      ]
+}
