@@ -12,7 +12,7 @@
       "schema": "./service/schema.json"
     },
     "material-module": {
-      "description": "clic material-module",
+      "description": "clic material-module based on angular-material 8.2.3",
       "factory": "./material-module/index#module",
       "schema": "./material-module/schema.json"
     }

@@ -12,7 +12,9 @@ export function module(options: any): Rule {
       throw new SchematicsException('Could not find Angular workspace configuration');
     }
 
-    if (options.name === null || options.name === undefined) {
+    if (options.name === null 
+      || options.name === undefined 
+      || options.name === '') {
       options.name = 'clicMaterial';
     }
 
