@@ -10,6 +10,11 @@
       "description": "clic service",
       "factory": "./service/index#service",
       "schema": "./service/schema.json"
+    },
+    "material-module": {
+      "description": "clic material-module",
+      "factory": "./material-module/index#module",
+      "schema": "./material-module/schema.json"
     }
   }
 }

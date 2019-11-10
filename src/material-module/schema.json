@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsService",
+  "title": "Materail module Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the material module",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the material module?"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the service",
+      "visible": false
+    }
+  }
+}
