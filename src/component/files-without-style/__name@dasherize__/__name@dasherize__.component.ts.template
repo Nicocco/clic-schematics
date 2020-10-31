@@ -1,0 +1,41 @@
+import { Component, OnInit } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class <%= classify(name)%>Component implements OnInit {
+
+  //#region ATTRIBUTS
+  /* ==========================================================================
+                                ATTRIBUTS
+  ===========================================================================*/
+
+  //#endregion
+
+  //#region METHODES
+  /* ==========================================================================
+                                METHODES
+  ===========================================================================*/
+
+  constructor() { }
+
+  ngOnInit(): void { }
+
+<% if (splitGetSet) { %>
+  //#region --------------------------- GETTERS -------------------------------
+  //#endregion
+
+  //#region --------------------------- SETTERS -------------------------------
+  //#endregion
+<% } else { %>
+  //#region ---------------------- GETTERS / SETTERS --------------------------
+  //#endregion
+<% } %>
+  //#region --------------------- DIRECT ACTION ON UI -------------------------
+  //#endregion
+  
+  //#region ----------------------- OTHER METHOODES ---------------------------
+  //#endregion
+
+  //#endregion
+}
