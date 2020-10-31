@@ -7,11 +7,7 @@
     "name": {
       "description": "The name of the material module",
       "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      },
-      "x-prompt": "What name would you like to use for the material module?"
+      "default": "ClicMaterial"
     },
     "path": {
       "type": "string",

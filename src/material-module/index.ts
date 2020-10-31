@@ -8,14 +8,8 @@ export function module(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
 
     const workspaceConfig = tree.read('/angular.json');
-    if (!workspaceConfig) { 
+    if (!workspaceConfig) {
       throw new SchematicsException('Could not find Angular workspace configuration');
-    }
-
-    if (options.name === null 
-      || options.name === undefined 
-      || options.name === '') {
-      options.name = 'clicMaterial';
     }
 
     const templateSource = apply(url('./files'), [

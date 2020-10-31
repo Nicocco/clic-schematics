@@ -4,7 +4,8 @@
     "component": {
       "description": "clic component",
       "factory": "./component/index#component",
-      "schema": "./component/schema.json"
+      "schema": "./component/schema.json",
+      "aliases": ["compo"]
     },
     "service": {
       "description": "clic service",
@@ -15,6 +16,11 @@
       "description": "clic material-module based on angular-material 8.2.3",
       "factory": "./material-module/index#module",
       "schema": "./material-module/schema.json"
+    },
+    "flux": {
+      "description": "clic custom flux dispatcher, store and enum of actions",
+      "factory": "./flux/index#flux",
+      "schema": "./flux/schema.json"
     }
   }
 }

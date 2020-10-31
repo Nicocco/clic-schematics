@@ -45,9 +45,5 @@ function generateTemplate(options: any): object {
  * @param options schematics options entries
  */
 function getUrlFilesSystemToCopy(options: any): string {
-  if (options.withoutStyleSheet) {
-    return './files-without-style';
-  } else {
     return './files';
-  }
 }
