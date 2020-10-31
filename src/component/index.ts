@@ -1,9 +1,6 @@
 import {
-  Rule, SchematicContext,
-  Tree,
-  apply,
-  url,
-  applyTemplates, move, chain, mergeWith, SchematicsException, Source
+  Rule, SchematicContext, Tree, apply, url, applyTemplates, 
+  move, chain, mergeWith, SchematicsException, Source
 } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
 
