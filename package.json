@@ -1,6 +1,6 @@
 {
   "name": "@lgm-clic/schematics",
-  "version": "1.1.1",
+  "version": "1.1.2-rc.0",
   "description": "clic schematic matching clic best practices (based on Angular material 8.2.3)",
   "repository": {
     "url": "https://github.com/Nicocco/clic-schematics.git"
