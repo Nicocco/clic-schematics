@@ -1,17 +1,11 @@
 import { Rule, SchematicContext, Tree, apply, url, applyTemplates, move, chain, mergeWith, SchematicsException } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
+import { AngularConstantes } from '../shared/angular-constantes';
+import { Utils } from '../shared/Utils';
 
-
-// You don't have to export the function as default. You can also have more than one rule factory
-// per file.
 export function service(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-
-    const workspaceConfig = tree.read('/angular.json');
-    if (!workspaceConfig) { 
-      throw new SchematicsException('Could not find Angular workspace configuration');
-    }
-
+    Utils.AngularProjectCheck(tree);
     const templateSource = apply(url('./files'), [
       applyTemplates({
         classify: strings.classify,

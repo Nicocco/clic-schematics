@@ -3,15 +3,11 @@ import {
   move, chain, mergeWith, SchematicsException, Source
 } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
+import { Utils } from '../shared/Utils';
 
 export function component(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-
-    const workspaceConfig = tree.read('/angular.json');
-    if (!workspaceConfig) {
-      throw new SchematicsException('Could not find Angular workspace configuration');
-    }
-
+    Utils.AngularProjectCheck(tree);
     const templateSource: Source = apply(
       url(getUrlFilesSystemToCopy(options)),
       [
