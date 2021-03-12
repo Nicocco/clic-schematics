@@ -1,0 +1,13 @@
+import { ModelBase } from "./model.base";
+
+export class MapperBase<T extends ModelBase<T>>{
+
+  public mapElement(elementToMap: T): T {
+    throw new Error("MapperBase.MaElement(...): Not Implemented!");
+  }
+
+  public mapElements(...elementsToMap: Array<T>): Array<T> {
+    throw new Error("MapperBase.MaElements(...): Not Implemented!");
+  }
+}
+

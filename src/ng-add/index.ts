@@ -1,10 +1,37 @@
-import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { strings } from '@angular-devkit/core';
+import { apply, applyTemplates, chain, MergeStrategy, mergeWith, move, Rule, SchematicContext, Source, Tree, url } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
+import { normalize } from 'path';
 import { AngularConstantes } from '../shared/angular-constantes';
 import { SchematicConstantes } from '../shared/constantes';
 import { Utils } from '../shared/Utils';
 
 export function ngAdd(): Rule {
+    return chain([
+        generateProjectTemplate(),
+        addPackageDependancies()
+    ]);
+}
+
+function generateProjectTemplate(): Rule {
+    return (tree: Tree, _context: SchematicContext) => {
+        Utils.AngularProjectCheck(tree);
+        const templateSource: Source = apply(
+            url('./files/'),
+            [
+                applyTemplates({
+                    classify: strings.classify,
+                    dasherize: strings.dasherize
+                  }),
+                move(normalize('./src/app/'))
+            ]
+        );
+        _context.logger.info('added source template');
+        return mergeWith(templateSource, MergeStrategy.Overwrite);
+    };
+}
+
+function addPackageDependancies(): Rule {
     return (tree: Tree, _context: SchematicContext) => {
         Utils.AngularProjectCheck(tree);
         const jsonPackageStr: string = tree.read(AngularConstantes.packageJsonFileName)!.toString('utf-8');
@@ -19,11 +46,11 @@ export function ngAdd(): Rule {
                 = NeededPackage.packageVersion;
             _context.logger.log('info', 'added ' + NeededPackage.packageName + '@'
                 + NeededPackage.packageVersion
-                + 'as dependency');
+                + ' as dependency');
         }
-
         tree.overwrite('package.json', JSON.stringify(jsonPackage, null, 4));
         _context.addTask(new NodePackageInstallTask());
         return tree;
     }
+
 }

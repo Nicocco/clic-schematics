@@ -1,0 +1,5 @@
+<div class="splash-screen" xyz="out-fade-100% out-up-100%" [ngClass]="{'xyz-out': !show}">
+  <div [style.margin-bottom]="'calc(100vw/'+ title.length +')'" [style.font-size]="'calc(100vw/' + title.length + ')'">
+    {{title}}</div>
+  <mat-progress-bar class="splash-screen__progressbar" color="white" mode="indeterminate"></mat-progress-bar>
+</div>

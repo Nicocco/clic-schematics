@@ -1,6 +1,5 @@
-import { Rule, SchematicContext, Tree, apply, url, applyTemplates, move, chain, mergeWith, SchematicsException } from '@angular-devkit/schematics';
+import { Rule, SchematicContext, Tree, apply, url, applyTemplates, move, chain, mergeWith } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
-import { AngularConstantes } from '../shared/angular-constantes';
 import { Utils } from '../shared/Utils';
 
 export function service(options: any): Rule {

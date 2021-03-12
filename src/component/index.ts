@@ -1,6 +1,6 @@
 import {
   Rule, SchematicContext, Tree, apply, url, applyTemplates,
-  move, chain, mergeWith, SchematicsException, Source
+  move, chain, mergeWith, Source
 } from '@angular-devkit/schematics';
 import { strings, normalize } from '@angular-devkit/core';
 import { Utils } from '../shared/Utils';
@@ -15,7 +15,6 @@ export function component(options: any): Rule {
         move(normalize(options.path as string))
       ]
     );
-
     return chain([
       mergeWith(templateSource)
     ]);

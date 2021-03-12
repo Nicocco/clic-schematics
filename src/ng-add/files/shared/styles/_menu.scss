@@ -1,0 +1,44 @@
+@import "./constantes/constantes";
+@import "~@angular/material/theming";
+
+mat-drawer-container {
+  height: 100%;
+  width: 100%;
+}
+
+.mat-toolbar {
+  background-image: $backgroundImage;
+  color: whitesmoke;
+}
+
+.menu-container {
+  width: $navMenuWidthDefault;
+  height: 100%;
+
+  * {
+    width: 100%;
+  }
+}
+
+.menu-list {
+  &__sub-title {
+    font-size: 0.7em;
+    font-weight: lighter;
+    font-style: italic;
+  }
+}
+
+@media screen and (min-width: $smallScreenWidth) {
+  .menu-container {
+    width: $navMenuWidthL;
+    height: 100%;
+  }
+
+  .menu-list {
+    mat-list-item:hover {
+      cursor: pointer;
+      @include mat-elevation-transition;
+      @include mat-elevation(2);
+    }
+  }
+}

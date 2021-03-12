@@ -1,0 +1,32 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+
+  &__row {
+    flex-direction: row;
+  }
+
+  &__column {
+    flex-direction: column;
+  }
+
+  &__centered {
+    justify-content: center;
+  }
+
+  &__space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &__space-between {
+    justify-content: space-between;
+  }
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,73 @@
+import { ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { environment } from "src/environments/environment";
+import { PwaService } from "../../services/pwa.service";
+
+@Component({
+  selector: 'app-splash-screen',
+  templateUrl: './splash-screen.component.html',
+  styleUrls: ['./splash-screen.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SplashScreenComponent implements OnInit {
+
+  //#region
+  //===========================================================================
+  //                                ATTRIBUTS
+  //===========================================================================
+
+  //#region ---------------------------- INPUTS -------------------------------
+
+  //#endregion
+
+  //#region --------------------------- PRIVATES ------------------------------
+
+  private _show: boolean = true;
+
+  //#endregion
+
+
+  //#region ------------------------- SUBSCRIPTIONS ---------------------------
+
+  //#endregion
+
+  //#endregion
+
+  //#region
+  //===========================================================================
+  //                                METHODES
+  //===========================================================================
+
+  constructor(
+    private readonly _pwaService: PwaService,
+    private readonly _cdr: ChangeDetectorRef,
+    private readonly _appRef: ApplicationRef,
+  ) {
+  }
+
+  public ngOnInit(): void {
+    this._pwaService.checkForUpdate()
+      .subscribe(result => {
+        this._show = result;
+        this._cdr.detectChanges();
+      });
+  }
+
+  //#region ----------------------------- GETTERS -----------------------------
+
+  public get show(): boolean {
+    return this._show;
+  }
+
+  public get title(): string {
+    return environment.title;
+  }
+
+  //#endregion
+
+  //#region ---------------------- DIRECT ACTIONS ON UI -----------------------
+
+  //#endregion
+
+  //#endregion
+
+}

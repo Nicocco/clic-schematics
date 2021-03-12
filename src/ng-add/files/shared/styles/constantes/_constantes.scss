@@ -1,0 +1,29 @@
+// ---------------------------------- COLORS ----------------------------------
+
+$primaryColor: #C79CD9;
+$primaryDarkColor: #04B2D9;
+$neutralColor: #F29F05;
+$secondaryColor: #F27457;
+$secondaryDarkColor: #F23C13;
+
+
+// ---------------------------------- GLOBAL ----------------------------------
+
+$backgroundImage: linear-gradient(200deg,$primaryColor, $primaryDarkColor);
+$smallScreenWidth: 550px;
+
+// ----------------------------------- MENU -----------------------------------
+
+$navMenuWidthDefault: 200px;
+$navMenuWidthL: 450px;
+$toolBarHeigh: 56px;
+
+// -------------------------------- USER PARAMS -------------------------------
+
+$userImgSquareSizeDefault: 60px;
+$userImgSquareSizeL: 80px;
+
+// --------------------------------- MESSAGES ---------------------------------
+
+$chatMessageBorderRadius: 20px;
+$chatMessageSenderHeight: 50px;

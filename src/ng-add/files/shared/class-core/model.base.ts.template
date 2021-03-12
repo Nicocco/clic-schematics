@@ -1,0 +1,35 @@
+export abstract class ModelBase<T> {
+
+  //#region
+  //===========================================================================
+  //                                ATTRIBUTS
+  //===========================================================================
+
+  private _guid?: string = undefined;
+
+  //#endregion
+
+  //#region
+  //===========================================================================
+  //                                METHODES
+  //===========================================================================
+
+  constructor(entityGuid: string | undefined) {
+    this._guid = entityGuid;
+  }
+
+  //#region ---------------------------- GETTERS ------------------------------
+
+  public get guid(): string | undefined {
+    return this._guid;
+  }
+
+  //#endregion
+
+  //#region ---------------------------- SETTERS ------------------------------
+
+  //#endregion
+
+  //#endregion
+
+}

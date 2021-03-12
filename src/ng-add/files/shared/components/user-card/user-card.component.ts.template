@@ -1,0 +1,80 @@
+import { Component, Input } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { UserParameterComponent } from "src/app/params/user/params-user.component";
+import { AppDispatcher } from "../../flux/dispatcher";
+import { User } from "../../models/user.model";
+import { AppUtils } from "../../utils/utils";
+import { UserCardActions } from "./user-card.action";
+
+@Component({
+  selector: 'app-user-card',
+  templateUrl: './user-card.component.html',
+  styleUrls: ['./user-card.component.scss']
+})
+export class UserCardComponent {
+
+  //#region
+  //===========================================================================
+  //                                ATTRIBUTS
+  //===========================================================================
+
+  //#region ---------------------------- INPUTS -------------------------------
+
+  @Input() user!: User;
+
+  //#endregion
+
+  //#region ---------------------------- INPUTS -------------------------------
+
+  private _userCardActions!: UserCardActions;
+
+  //#endregion
+
+  //#region ------------------------- SUBSCRIPTIONS ---------------------------
+
+  //#endregion
+
+  //#endregion
+
+  //#region
+  //===========================================================================
+  //                                METHODES
+  //===========================================================================
+
+  constructor(private readonly _dispatcher: AppDispatcher,
+    private readonly _dialog: MatDialog) {
+    this._userCardActions = new UserCardActions(this._dispatcher);
+  }
+
+  //#region ----------------------------- GETTERS -----------------------------
+
+  public get currentUser(): User {
+    return this.user;
+  }
+
+  public get asUserImage(): boolean {
+    let result = !AppUtils.isNullOrUndefined(this.user, this.user?.imageUrl);
+    return !AppUtils.isNullOrUndefined(this.user, this.user?.imageUrl);
+  }
+
+  public get userImage(): string {
+    return this.user?.imageUrl ?? '';
+  }
+
+  public get userInitial(): string {
+    return this.user?.initials;
+  }
+
+  //#endregion
+
+  //#region ---------------------- DIRECT ACTIONS ON UI -----------------------
+
+  public click(): void {
+    this._dialog.open(UserParameterComponent);
+  }
+
+  //#endregion
+
+  //#endregion
+
+}

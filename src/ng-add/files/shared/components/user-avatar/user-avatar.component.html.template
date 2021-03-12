@@ -1,0 +1,10 @@
+<div class="avatar" *ngIf="asUserImage" [style.background-image]="'url(' + userImage + ')'"
+[ngClass]="{'avatar--large': avatarSize === ComponentSize.LARGE,
+'avatar--medium': avatarSize === ComponentSize.MEDIUM,
+'avatar--small': avatarSize === ComponentSize.SMALL}">
+</div>
+<div class="avatar" *ngIf="!asUserImage" [ngClass]="{'avatar--large': avatarSize === ComponentSize.LARGE,
+'avatar--medium': avatarSize === ComponentSize.MEDIUM,
+'avatar--small': avatarSize === ComponentSize.SMALL}">
+  <span>{{userInitial}}</span>
+</div>

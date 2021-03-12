@@ -1,0 +1,21 @@
+import { HttpClient } from "@angular/common/http";
+
+export abstract class ServiceBase {
+
+  //#region
+  //===========================================================================
+  //                                ATTRIBUTS
+  //===========================================================================
+
+  //#endregion
+
+  //#region
+  //===========================================================================
+  //                                METHODES
+  //===========================================================================
+
+  constructor(private readonly HttpService: HttpClient) { }
+
+  //#endregion
+
+}

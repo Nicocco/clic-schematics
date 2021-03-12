@@ -1,0 +1,69 @@
+import { Component, Input } from "@angular/core";
+import { ComponentSize } from "../../enums/component-size.enum";
+import { IdentityStore } from "../../flux/identity.store";
+import { User } from "../../models/user.model";
+import { AppUtils } from "../../utils/utils";
+
+@Component({
+  selector: 'app-user-avatar',
+  templateUrl: './user-avatar.component.html',
+  styleUrls: ['./user-avatar.component.scss']
+})
+export class UserAvatarComponent {
+
+  //#region
+  //===========================================================================
+  //                                ATTRIBUTS
+  //===========================================================================
+
+  //#region ---------------------------- INPUTS -------------------------------
+
+  @Input() user!: User;
+  @Input() avatarSize: string = ComponentSize.MEDIUM;
+
+  //#endregion
+
+  //#region ---------------------------- PUBLICS ------------------------------
+
+  public ComponentSize = ComponentSize;
+
+  //#endregion
+
+  //#region ------------------------- SUBSCRIPTIONS ---------------------------
+
+  //#endregion
+
+  //#endregion
+
+  //#region
+  //===========================================================================
+  //                                METHODES
+  //===========================================================================
+
+  constructor() {
+  }
+
+  //#region ----------------------------- GETTERS -----------------------------
+
+  public get asUserImage(): boolean {
+    let result = !AppUtils.isNullOrUndefined(this.user, this.user?.imageUrl);
+    return !AppUtils.isNullOrUndefined(this.user, this.user?.imageUrl);
+  }
+
+  public get userImage(): string {
+    return this.user?.imageUrl ?? '';
+  }
+
+  public get userInitial(): string {
+    return this.user?.initials;
+  }
+
+  //#endregion
+
+  //#region ---------------------- DIRECT ACTIONS ON UI -----------------------
+
+  //#endregion
+
+  //#endregion
+
+}

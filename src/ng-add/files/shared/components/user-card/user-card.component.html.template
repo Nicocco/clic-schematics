@@ -1,0 +1,7 @@
+<mat-card class="user-card" mat-ripple (click)="click()">
+  <app-user-avatar class="user-card__avatar" [user]="user"></app-user-avatar>
+  <div class="user-card__title">
+    <span class="user-card__title--first">Prénom Nom</span>
+    <span class="user-card__title--second">Role dans la famille</span>
+  </div>
+</mat-card>
