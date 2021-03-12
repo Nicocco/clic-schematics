@@ -1,6 +1,10 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
+    "ng-add": {
+      "description": "Add all @lgm-clic package",
+      "factory": "./ng-add/index#ngAdd"
+    },
     "component": {
       "description": "clic component",
       "factory": "./component/index#component",
@@ -11,16 +15,6 @@
       "description": "clic service",
       "factory": "./service/index#service",
       "schema": "./service/schema.json"
-    },
-    "material-module": {
-      "description": "clic material-module based on angular-material 8.2.3",
-      "factory": "./material-module/index#module",
-      "schema": "./material-module/schema.json"
-    },
-    "flux": {
-      "description": "clic custom flux dispatcher, store and enum of actions",
-      "factory": "./flux/index#flux",
-      "schema": "./flux/schema.json"
     }
   }
 }
