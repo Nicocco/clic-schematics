@@ -1,0 +1,14 @@
+<mat-drawer-container (backdropClick)="closeSideNav()">
+  <mat-drawer #drawer [mode]="menuMode" class="menu-container" [opened]="isOpened">
+    <app-nav-menu></app-nav-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar>
+      <button type="button" mat-icon-button (click)="toogleSideNav()">
+        <mat-icon *ngIf="!isOpened" aria-hidden="false" aria-label="Menu closed icon">menu</mat-icon>
+        <mat-icon *ngIf="isOpened" aria-hidden="false" aria-label="Menu opened icon">menu_open</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

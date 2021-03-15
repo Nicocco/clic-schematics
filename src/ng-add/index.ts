@@ -5,10 +5,12 @@ import { normalize } from 'path';
 import { AngularConstantes } from '../shared/angular-constantes';
 import { SchematicConstantes } from '../shared/constantes';
 import { Utils } from '../shared/Utils';
+import * as ts from 'typescript';
 
 export function ngAdd(): Rule {
     return chain([
         generateProjectTemplate(),
+        addEnvVar(),
         addPackageDependancies()
     ]);
 }
@@ -22,7 +24,7 @@ function generateProjectTemplate(): Rule {
                 applyTemplates({
                     classify: strings.classify,
                     dasherize: strings.dasherize
-                  }),
+                }),
                 move(normalize('./src/app/'))
             ]
         );
@@ -31,10 +33,24 @@ function generateProjectTemplate(): Rule {
     };
 }
 
+function addEnvVar(): Rule {
+    return (tree: Tree, _context: SchematicContext) => {
+        Utils.AngularProjectCheck(tree);
+        let stringFileContent: string = tree.read(AngularConstantes.environementFileName)!
+            .toString('utf-8');
+
+        let node = ts.createSourceFile(AngularConstantes.environementFileName,
+            stringFileContent,
+            ts.ScriptTarget.Latest);
+        return tree;
+    }
+}
+
 function addPackageDependancies(): Rule {
     return (tree: Tree, _context: SchematicContext) => {
         Utils.AngularProjectCheck(tree);
-        const jsonPackageStr: string = tree.read(AngularConstantes.packageJsonFileName)!.toString('utf-8');
+        const jsonPackageStr: string = tree.read(AngularConstantes.packageJsonFileName)!
+            .toString('utf-8');
         const jsonPackage: any = JSON.parse(jsonPackageStr);
 
         if (Utils.isNullOrUndefined(jsonPackage[AngularConstantes.dependenciesSectionName])) {

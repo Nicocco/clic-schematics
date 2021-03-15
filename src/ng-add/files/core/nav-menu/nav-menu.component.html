@@ -1,0 +1,37 @@
+<div class="flex-container flex-container__column flex-container__space-between full-height">
+  <div>
+    <div [ngClass]="{'xyz-in': isMenuOpen, 'xyz-out': !isMenuOpen}" xyz="fade left-50%">
+      <app-user-card [user]="currentUser"></app-user-card>
+    </div>
+
+    <div xyz="fade down-50% stagger-2">
+      <mat-nav-list class="menu-list">
+        <mat-list-item [ngClass]="{'xyz-in': isMenuOpen, 'xyz-out': !isMenuOpen}"
+          (click)="navigateTo(PageRoute.MESSAGES)">
+          <mat-icon mat-list-icon matBadge="2" [matBadgeHidden]="false">chat</mat-icon>
+          <div mat-line>chat</div>
+          <div mat-line class="menu-list__sub-title">2 nouveaux</div>
+        </mat-list-item>
+        <mat-list-item [ngClass]="{'xyz-in': isMenuOpen, 'xyz-out': !isMenuOpen}"
+          (click)="navigateTo(PageRoute.CALENDAR)">
+          <mat-icon mat-list-icon>today</mat-icon>
+          <div mat-line>Calendrier</div>
+          <div mat-line class="menu-list__sub-title">3 évènements</div>
+        </mat-list-item>
+        <mat-list-item [ngClass]="{'xyz-in': isMenuOpen, 'xyz-out': !isMenuOpen}"
+          (click)="navigateTo(PageRoute.FOLDERS)">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <div mat-line>Documents</div>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </div>
+  <div xyz="fade up-50% stagger-2">
+    <mat-nav-list class="menu-list" [ngClass]="{'xyz-in': isMenuOpen, 'xyz-out': !isMenuOpen}">
+      <mat-list-item>
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <div mat-line>Paramètres</div>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>
