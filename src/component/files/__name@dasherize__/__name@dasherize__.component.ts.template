@@ -1,0 +1,41 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html'<% if (withoutStyleSheet) {%>,
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'] <%}%>
+})
+export class <%= classify(name)%>Component implements OnInit {
+
+  //#region ===================================================================
+  //                              ATTRIBUTS
+  // ==========================================================================
+
+  //#endregion
+
+  //#region ===================================================================
+  //                              METHODES
+  // ==========================================================================
+
+  constructor() { }
+
+  ngOnInit(): void { }
+
+<% if (splitGetSet) { %>
+  //#region --------------------------- GETTERS -------------------------------
+  //#endregion
+
+  //#region --------------------------- SETTERS -------------------------------
+  //#endregion
+<% } else { %>
+  //#region ---------------------- GETTERS / SETTERS --------------------------
+  //#endregion
+<% } %>
+  //#region --------------------- DIRECT ACTION ON UI -------------------------
+  //#endregion
+  
+  //#region ----------------------- OTHER METHOODES ---------------------------
+  //#endregion
+
+  //#endregion
+}

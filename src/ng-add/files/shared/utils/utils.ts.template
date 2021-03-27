@@ -1,0 +1,18 @@
+export namespace AppUtils {
+
+  /**
+   * Renvoie false si toutes les valeurs passé en paramètre sont diférentes de null
+   * ou de undefined. Renvoie true sinon.
+   * @param params valeur(s) à vérfier
+   */
+  export function isNullOrUndefined(...params: any[]): boolean {
+    let index: number = 0;
+    let isNullOrUndefined: boolean = false;
+    while (isNullOrUndefined == false
+      && index < params.length) {
+      isNullOrUndefined = params[index] === null || params[index] === undefined;
+      index++;
+    }
+    return isNullOrUndefined;
+  }
+}

@@ -1,0 +1,5 @@
+import { MapperBase } from "../class-core/mapper.base";
+
+export class UserMapper extends MapperBase {
+
+}

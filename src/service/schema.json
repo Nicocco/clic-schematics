@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsService",
+  "title": "Component Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the service",
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the service?"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the service",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "http": {
+      "type": "boolean",
+      "description": "boolean to defini http service or simple service"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

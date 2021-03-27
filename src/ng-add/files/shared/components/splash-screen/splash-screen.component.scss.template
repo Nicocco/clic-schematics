@@ -1,0 +1,21 @@
+@import "../../styles/constantes/constantes";
+
+.splash-screen {
+  position: absolute;
+  background-image: $backgroundImage;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__progressbar {
+    width: calc(100vw / 4);
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add all @lgm-clic package",
+      "factory": "./ng-add/index#ngAdd"
+    },
+    "component": {
+      "description": "clic component",
+      "factory": "./component/index#component",
+      "schema": "./component/schema.json",
+      "aliases": ["compo"]
+    },
+    "service": {
+      "description": "clic service",
+      "factory": "./service/index#service",
+      "schema": "./service/schema.json"
+    }
+  }
+}

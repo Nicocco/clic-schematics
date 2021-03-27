@@ -1,0 +1,29 @@
+{
+  "name": "@lgm-clic/schematics",
+  "version": "1.0.0-rc.0",
+  "description": "clic schematic matching clic best practices (based on Angular material 8.2.3)",
+  "repository": {
+    "url": "https://github.com/Nicocco/clic-schematics.git"
+  },
+  "private": false,
+  "author": {
+    "name": "Nicolas MORISSEAU"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^8.3.12",
+    "@angular-devkit/schematics": "^8.3.12",
+    "@types/jasmine": "^3.3.9",
+    "@types/node": "^8.0.31",
+    "jasmine": "^3.3.1",
+    "typescript": "~3.5.3"
+  }
+}

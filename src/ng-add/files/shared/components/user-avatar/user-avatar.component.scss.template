@@ -1,0 +1,44 @@
+@import "/src/app/shared/styles/constantes/constantes";
+@import "~@angular/material/theming";
+
+.avatar {
+  border-radius: 50%;
+  background: grey;
+  color: whitesmoke;
+  opacity: 0, 8;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: lighter;
+
+  &--medium {
+    height: $userImgSquareSizeL;
+    width: $userImgSquareSizeL;
+    font-size: calc(#{$userImgSquareSizeL}/ 3);
+  }
+
+  &--small {
+    width: 35px;
+    height: 35px;
+    font-size: calc(35px/ 3);
+  }
+}
+
+@media screen and (max-width: $smallScreenWidth) {
+  .avatar {
+
+    &--medium {
+      width: $userImgSquareSizeDefault;
+      height: $userImgSquareSizeDefault;
+      font-size: calc(#{$userImgSquareSizeDefault}/ 3);
+    }
+
+    &--small {
+      width: 30px;
+      height: 30px;
+      font-size: calc(30px/ 3);
+    }
+  }
+}

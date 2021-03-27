@@ -1,0 +1,6 @@
+import { MatDialog } from "@angular/material/dialog";
+import { AppDispatcher } from "../../flux/dispatcher"
+
+export class UserCardActions {
+  constructor(private readonly _dispatcher: AppDispatcher) { }
+}

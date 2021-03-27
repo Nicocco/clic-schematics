@@ -1,0 +1,3 @@
+export namespace PwaConstantes {
+  export var SPLASH_SCREEN_DEFAUT_TIMER: number = 1500;
+}
