@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "ng-add": {
-      "description": "Add all @lgm-clic package",
+      "description": "Add all @la-clic package",
       "factory": "./ng-add/index#ngAdd"
     },
     "component": {

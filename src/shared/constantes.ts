@@ -7,11 +7,11 @@ export namespace SchematicConstantes {
 
     export var clicPackages: Array<IPackage> = [
         {
-            packageName: '@lgm-clic/ts-flux',
+            packageName: '@la-clic/ts-flux',
             packageVersion: '1.0.0-rc.1'
         },
         {
-            packageName: '@lgm-clic/logger',
+            packageName: '@la-clic/logger',
             packageVersion: '1.0.0-rc.1'
         }
     ];

@@ -1,2 +1,1 @@
-# @lgm-clic/schematics
-
+# @la-clic/schematics
